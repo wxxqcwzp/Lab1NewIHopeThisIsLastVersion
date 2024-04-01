@@ -10,7 +10,7 @@ int InputInt(string message, int min, int max) {
 
 	cin >> user_input;
 
-	while (cin.fail() || user_input < min || user_input > max) {
+	while (cin.fail() || user_input <= min || user_input >= max) {
 
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');
@@ -24,7 +24,7 @@ int InputInt(string message, int min, int max) {
 
 	return user_input;
 }
-double InputDouble(string message, int min, int max) {
+double InputDouble(string message, double min, double max) {
 
 	double user_input;
 
@@ -32,7 +32,7 @@ double InputDouble(string message, int min, int max) {
 
 	cin >> user_input;
 
-	while (cin.fail() || user_input < min || user_input > max) {
+	while (cin.fail() || user_input <= min || user_input >= max) {
 
 		cin.clear();
 		cin.ignore(INT_MAX, '\n');

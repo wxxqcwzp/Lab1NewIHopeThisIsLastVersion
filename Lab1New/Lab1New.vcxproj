@@ -100,7 +100,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>Level4</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -131,6 +131,7 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Lab1New.cpp" />
     <ClCompile Include="ShowMenu.cpp" />
+    <ClCompile Include="Tasks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Employee.h" />
@@ -138,6 +139,7 @@
     <ClInclude Include="Files.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="ShowMenu.h" />
+    <ClInclude Include="Tasks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

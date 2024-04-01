@@ -20,11 +20,11 @@ private:
 
 public:
 	Employee(string last_name, string first_name, string middle_name, string job_title, int enter_year, double salary) :
-		last_name(last_name), first_name(first_name), middle_name(middle_name), enter_year(enter_year), salary(salary) {}
+		last_name(last_name), first_name(first_name), middle_name(middle_name),job_title(job_title), enter_year(enter_year), salary(salary) {}
 
 
 
-	Employee get_employee() {
+	static Employee get_input_employee() {
 
 		string new_last_name = InputString("Enter employee's last name:");
 		string new_first_name = InputString("Enter employee's first name:");
@@ -32,9 +32,9 @@ public:
 
 		string new_job_title = InputString("Enter employee's job title:");
 
-		int new_enter_year = InputInt("Enter employee's enter year:", 0, INT_MAX);
+		int new_enter_year = InputInt("Enter employee's enter year:", 0, 2025);
 
-		double new_salary = InputDouble("Enter employee's salary:", 0, DBL_MAX);
+		double new_salary = InputDouble("Enter employee's salary:", 1.0, DBL_MAX);
 
 
 		return Employee(new_last_name, new_first_name, new_middle_name, new_job_title, new_enter_year, new_salary);
@@ -57,6 +57,6 @@ public:
 	double get_salary() { return salary; }
 
 
-	void show_full_name() { cout << last_name << ' ' << first_name << ' ' << middle_name << "; " << job_title << "; enter year:" << enter_year << "; salary:" << salary << endl; }
+	void show_employee() { cout << last_name << ' ' << first_name << ' ' << middle_name << "; " << job_title << "; enter year:" << enter_year << "; salary:" << salary << endl; }
 
 };

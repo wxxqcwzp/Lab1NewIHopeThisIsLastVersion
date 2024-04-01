@@ -10,12 +10,12 @@ private:
 
 public:
 
-	void set_employees(vector<Employee>& new_employees) { employees = new_employees; }
+	void set_employees(vector<Employee> new_employees) { employees = new_employees; }
 
 
 	void show_employees() {
 		cout << endl;
-		for (Employee employee : employees) { employee.show_full_name(); }
+		for (Employee employee : employees) { employee.show_employee(); }
 	}
 
 
