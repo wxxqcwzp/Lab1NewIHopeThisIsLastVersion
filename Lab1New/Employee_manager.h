@@ -16,6 +16,14 @@ public:
 	void show_employees() {
 		cout << endl;
 		for (Employee employee : employees) { employee.show_employee(); }
+		cout << endl;
+	}
+
+	void show_suitable_employees(vector<Employee> suitable_employees) {
+
+		for (Employee employee : suitable_employees) { employee.show_employee(); }
+		cout << endl;
+
 	}
 
 
@@ -58,6 +66,10 @@ public:
 
 		}
 		return suitable_employees;
+	}
+
+	vector<Employee>get_employees() {
+		return employees;
 	}
 
 };

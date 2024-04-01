@@ -19,6 +19,8 @@ int main()
 
 	bool repeat = true;
 
+	string file;
+
 	Employee_manager employees;
 
 	do {
@@ -28,13 +30,21 @@ int main()
 		{
 
 		case(ADD_EMPLOYEE): { add_employee(employees); break; }
+
 		case(SHOW_EMPLOYEES): { employees.show_employees(); break; }
-		case(SAVE_DATA): {}
-		case(LOAD_DATA): {}
-		case(SEARCH_BY_WORK_EXPERIENCE): {}
-		case(SEARCH_BY_SALARY): {}
-		case(SEARCH_BY_JOB_TITLE): {}
+
+		case(SAVE_DATA): { save_data(employees); break; }
+
+		case(LOAD_DATA): { load_data(employees); break; }
+
+		case(SEARCH_BY_WORK_EXPERIENCE): { search_by_work_experience(employees); break; }
+
+		case(SEARCH_BY_SALARY): { search_by_salary(employees); break; }
+
+		case(SEARCH_BY_JOB_TITLE): { search_by_job_title(employees); break; }
+
 		case(RUN_TESTS): { break; }
+
 		case(EXIT): { repeat = false; }
 
 		}

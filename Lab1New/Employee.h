@@ -34,7 +34,7 @@ public:
 
 		int new_enter_year = InputInt("Enter employee's enter year:", 0, 2025);
 
-		double new_salary = InputDouble("Enter employee's salary:", 1.0, DBL_MAX);
+		double new_salary = InputDouble("Enter employee's salary:", 0, DBL_MAX);
 
 
 		return Employee(new_last_name, new_first_name, new_middle_name, new_job_title, new_enter_year, new_salary);

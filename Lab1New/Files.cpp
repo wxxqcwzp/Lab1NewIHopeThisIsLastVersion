@@ -164,7 +164,7 @@ string get_overwrite_confirmation(string& full_path) {
 	return full_path;
 }
 void export_to_file(vector<Employee> employees_to_export) {
-	if (employees_to_export.empty()) { cout << "You haven't added any employees yet" << endl; return; }
+
 	string full_path = get_valid_filepath();
 	full_path = get_overwrite_confirmation(full_path);
 
