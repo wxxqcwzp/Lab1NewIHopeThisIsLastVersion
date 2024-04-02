@@ -23,6 +23,8 @@ int main()
 
 	Employee_manager employees;
 
+
+
 	do {
 		ShowMenu();
 		menu_item = InputInt("Select menu item: ", 0, 10);

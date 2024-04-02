@@ -132,6 +132,7 @@
     <ClCompile Include="Lab1New.cpp" />
     <ClCompile Include="ShowMenu.cpp" />
     <ClCompile Include="Tasks.cpp" />
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Employee.h" />
@@ -140,6 +141,7 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="ShowMenu.h" />
     <ClInclude Include="Tasks.h" />
+    <ClInclude Include="TestsClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
