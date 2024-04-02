@@ -7,6 +7,13 @@
 
 using namespace std;
 
+bool confirm_save_search_results() {
+
+	cout << "Do you want to save your search results? " << endl << "1 - Yes;" << endl << "0 - No;" << endl;;
+	int user_choice = InputInt("Enter menu item:", -1, 2);
+
+	return user_choice;
+}
 
 void add_employee(Employee_manager& employees) {
 
@@ -50,6 +57,7 @@ void search_by_work_experience(Employee_manager& employees) {
 	cout << "Suitable employees:" << endl;
 	employees.show_suitable_employees(suitable_employees);
 
+	if (confirm_save_search_results()) { export_to_file(suitable_employees); }
 }
 
 void search_by_salary(Employee_manager& employees) {
@@ -65,6 +73,7 @@ void search_by_salary(Employee_manager& employees) {
 	cout << "Suitable employees" << endl;
 	employees.show_suitable_employees(suitable_employees);
 
+	if (confirm_save_search_results()) { export_to_file(suitable_employees); }
 }
 
 void search_by_job_title(Employee_manager& employees) {
@@ -79,4 +88,7 @@ void search_by_job_title(Employee_manager& employees) {
 
 	cout << "Suitable employees:" << endl;
 	employees.show_suitable_employees(suitable_employees);
+
+	if (confirm_save_search_results()) { export_to_file(suitable_employees); }
 }
+
