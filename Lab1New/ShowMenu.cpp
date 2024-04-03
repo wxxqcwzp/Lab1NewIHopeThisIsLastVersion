@@ -9,7 +9,7 @@ void ShowGreeting() {
 	cout << "- a list of employees , whose work experience at a given enterprise exceeds a given number of years," << endl;
 	cout << "- a list of employees whose salary is greater than a given one," << endl;
 	cout << "- a list of employees occupying a given position." << endl;
-	cout << "Student of group 4307, Gaponyako Fedor Dmitrievich. 2024\n\n\n" << endl;;
+	cout << "Student of group 4307, Gaponyako Fedor Dmitrievich. 2024\n\n\n" << endl;
 }
 //
 //

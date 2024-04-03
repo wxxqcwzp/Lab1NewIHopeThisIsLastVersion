@@ -17,7 +17,7 @@ bool confirm_save_search_results() {
 
 void add_employee(Employee_manager& employees) {
 
-	Employee employee = Employee::get_input_employee();
+	Employee employee  = Employee::get_input_employee();
 
 	employees.add_employee(employee);
 }

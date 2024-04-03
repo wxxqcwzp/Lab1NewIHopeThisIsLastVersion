@@ -1,5 +1,4 @@
-﻿#include "Employee.h"
-#include "Employee_manager.h"
+﻿#include "Employee_manager.h"
 #include "ShowMenu.h"
 #include "Files.h"
 #include "Input.h"

@@ -82,8 +82,16 @@ vector<Employee> get_employees_from_file(const string filename) {
 			catch (invalid_argument& e) {
 				cerr << "Warning: converting field " << field_count << ": " << e.what() << endl;
 			}
+			
 
 			field_count++;
+		}
+
+		if (enter_year <= 0 || enter_year >= 2024 || salary <= 0) { 
+			//cerr << "Error opening file: " << filename << endl; 
+			files.clear();
+			input_file.close();
+			return files;
 		}
 
 		Employee employee(last_name, first_name, middle_name, job_title, enter_year, salary);

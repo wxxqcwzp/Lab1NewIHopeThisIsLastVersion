@@ -19,7 +19,6 @@ int InputInt(string message, int min, int max) {
 		cin >> user_input;
 	}
 
-	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 
 	return user_input;
@@ -41,7 +40,6 @@ double InputDouble(string message, double min, double max) {
 		cin >> user_input;
 	}
 
-	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 
 	return user_input;
@@ -63,7 +61,6 @@ string InputString(string message) {
 		cin >> user_input;
 	}
 
-	cin.clear();
 	cin.ignore(INT_MAX, '\n');
 
 	return user_input;
