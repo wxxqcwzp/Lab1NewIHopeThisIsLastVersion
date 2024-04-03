@@ -44,7 +44,7 @@ int main()
 
 		case(SEARCH_BY_JOB_TITLE): { search_by_job_title(employees); break; }
 
-		case(RUN_TESTS): { cout << "All tests passed" << endl; break; }
+		case(RUN_TESTS): { run_tests(); break; }
 
 		case(EXIT): { repeat = false; }
 

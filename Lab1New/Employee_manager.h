@@ -10,11 +10,18 @@ private:
 
 public:
 
-	void set_employees(vector<Employee> new_employees) { employees = new_employees; }
+	void set_employees(vector<Employee> new_employees) { 
+		
+		if(new_employees.empty()){ cout << "There is no employees" << endl; return; }
+		
+		employees = new_employees;
+	
+	}
 
 
 	void show_employees() {
 		cout << endl;
+		if (employees.empty()) { cout << "You haven't added any employees yet" << endl; }
 		for (Employee employee : employees) { employee.show_employee(); }
 		cout << endl;
 	}

@@ -1,6 +1,7 @@
 #include "Employee.h"
 #include "Employee_manager.h"
 #include "Files.h"
+#include "Input.h"
 
 
 #include <iostream>
@@ -17,7 +18,14 @@ bool confirm_save_search_results() {
 
 void add_employee(Employee_manager& employees) {
 
-	Employee employee  = Employee::get_input_employee();
+	Employee employee(
+		InputString("Enter employee's last name:"),
+		InputString("Enter employee's first name:"),
+		InputString("Enter employee's middle name:"),
+		InputString("Enter employee's job title:"),
+		InputInt("Enter employee's enter year:", 0, 2025),
+		InputDouble("Enter employee's salary:", 0, DBL_MAX)
+		);
 
 	employees.add_employee(employee);
 }
