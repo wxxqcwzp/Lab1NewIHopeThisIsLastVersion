@@ -20,7 +20,7 @@ bool is_vectors_equell(vector<Employee> &employees_to_tests,vector<Employee> &ex
 }
 
 
-void run_search_by_experience_test(vector<Employee>& employee_to_tests, vector<Employee>& expected_employees, int experience) {
+bool run_search_by_experience_test(vector<Employee>& employee_to_tests, vector<Employee>& expected_employees, int experience) {
 
 	Employee_manager employees;
 
@@ -36,10 +36,12 @@ void run_search_by_experience_test(vector<Employee>& employee_to_tests, vector<E
 
 	else{cout << "Search by work experience was unsuccessful" << endl;}
 
+	return test_passed;
+
 }
 
 
-void run_search_by_salary_test(vector<Employee>& employee_to_tests, vector<Employee>& expected_employees, double salary) {
+bool run_search_by_salary_test(vector<Employee>& employee_to_tests, vector<Employee>& expected_employees, double salary) {
 
 	Employee_manager employees;
 
@@ -55,10 +57,12 @@ void run_search_by_salary_test(vector<Employee>& employee_to_tests, vector<Emplo
 
 	else { cout << "Search by salary was unsuccessful" << endl; }
 
+	return test_passed;
+
 }
 
 
-void run_search_by_job_title_test(vector<Employee>& employee_to_tests, vector<Employee>& expected_employees, string job_title) {
+bool run_search_by_job_title_test(vector<Employee>& employee_to_tests, vector<Employee>& expected_employees, string job_title) {
 
 	Employee_manager employees;
 
@@ -73,6 +77,8 @@ void run_search_by_job_title_test(vector<Employee>& employee_to_tests, vector<Em
 	if (test_passed) { cout << "Search by job title successfully passed;" << endl; }
 
 	else { cout << "Search by job title was unsuccessful" << endl; }
+
+	return test_passed;
 
 }
 
@@ -233,12 +239,25 @@ void run_tests() {
 	};
 
 	cout << endl;
+
+	bool tests_passed = true;
+
 	for (Test current_test : search_tests) {
-		run_search_by_experience_test(current_test.employees_to_test, current_test.expectet_experience_search, current_test.experience_to_test);
-		run_search_by_salary_test(current_test.employees_to_test, current_test.expectet_salary_search, current_test.salary_to_test);
-		run_search_by_job_title_test(current_test.employees_to_test, current_test.expectet_job_title_search, current_test.job_title_to_test);
+
+		if (!run_search_by_experience_test(current_test.employees_to_test, current_test.expectet_experience_search, current_test.experience_to_test)) {
+			tests_passed = false;
+		}
+		if (!run_search_by_salary_test(current_test.employees_to_test, current_test.expectet_salary_search, current_test.salary_to_test)) {
+			tests_passed = false;
+		}
+		if (!run_search_by_job_title_test(current_test.employees_to_test, current_test.expectet_job_title_search, current_test.job_title_to_test)) {
+			tests_passed = false;
+		}
 
 	}
+	cout << endl;
+	if (tests_passed) { cout << "All tests passed successfully" << endl; }
+	else { cout << "Tests passed unsuccessfully" << endl; }
 	cout << endl;
 
 
