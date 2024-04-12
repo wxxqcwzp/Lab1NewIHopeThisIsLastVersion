@@ -12,8 +12,8 @@ int InputInt(string message, int min, int max) {
 
 	while (cin.fail() || user_input <= min || user_input >= max) {
 
-		cin.clear();
-		cin.ignore(INT_MAX, '\n');
+		cin.clear();//снимает ошибку
+		cin.ignore(INT_MAX, '\n');//чистит поток
 
 		cout << "Retype:" << endl;
 		cin >> user_input;

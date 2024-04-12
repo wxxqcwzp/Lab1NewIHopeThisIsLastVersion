@@ -3,17 +3,11 @@
 #include "TestsClass.h"
 
 
-bool is_vectors_equell(vector<Employee> &employees_to_tests,vector<Employee> &expected_employees){
+bool is_vectors_equal(vector<Employee> &employees_to_tests,vector<Employee> &expected_employees){
 
 	for (int i = 0; i < employees_to_tests.size(); i++) {
 
-		if (employees_to_tests[i].get_last_name() != expected_employees[i].get_last_name()/*||
-			employees_to_tests[i].get_first_name() != expected_employees[i].get_first_name()||
-			employees_to_tests[i].get_middle_name() != expected_employees[i].get_middle_name()||
-			employees_to_tests[i].get_job_title() != expected_employees[i].get_job_title()||
-			employees_to_tests[i].get_enter_year() != expected_employees[i].get_enter_year()||
-			employees_to_tests[i].get_salary() != expected_employees[i].get_salary()*/) {return false;}
-
+		if (employees_to_tests[i].get_last_name() != expected_employees[i].get_last_name()) {return false;}
 	}
 
 	return true;
@@ -30,11 +24,7 @@ bool run_search_by_experience_test(vector<Employee>& employee_to_tests, vector<E
 
 	bool test_passed = false;
 
-	test_passed = is_vectors_equell(tested_employees,expected_employees);
-
-	if (test_passed) { cout << "Search by work experience successfully passed;" << endl; }
-
-	else{cout << "Search by work experience was unsuccessful" << endl;}
+	test_passed = is_vectors_equal(tested_employees,expected_employees);
 
 	return test_passed;
 
@@ -51,11 +41,7 @@ bool run_search_by_salary_test(vector<Employee>& employee_to_tests, vector<Emplo
 
 	bool test_passed = false;
 
-	test_passed = is_vectors_equell(tested_employees, expected_employees);
-
-	if (test_passed) { cout << "Search by salary successfully passed;" << endl; }
-
-	else { cout << "Search by salary was unsuccessful" << endl; }
+	test_passed = is_vectors_equal(tested_employees, expected_employees);
 
 	return test_passed;
 
@@ -72,11 +58,8 @@ bool run_search_by_job_title_test(vector<Employee>& employee_to_tests, vector<Em
 
 	bool test_passed = false;
 
-	test_passed = is_vectors_equell(tested_employees, expected_employees);
+	test_passed = is_vectors_equal(tested_employees, expected_employees);
 
-	if (test_passed) { cout << "Search by job title successfully passed;" << endl; }
-
-	else { cout << "Search by job title was unsuccessful" << endl; }
 
 	return test_passed;
 

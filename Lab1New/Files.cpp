@@ -12,12 +12,12 @@
 enum token { LAST_NAME, FIRST_NAME, MIDDLE_NAME, JOB_TITLE, ENER_YEAR, SALARY };
 using namespace std;
 
-bool file_exists(const string& filename) {
+bool file_exists(string filename) {
 	ifstream file(filename);
 	return file.is_open();
 }
 
-bool confirm_overwrite(const string& filename) {
+bool confirm_overwrite(string filename) {
 
 	const int YES = 1;
 
@@ -36,7 +36,7 @@ bool confirm_overwrite(const string& filename) {
 
 }
 
-vector<Employee> get_employees_from_file(const string filename) {
+vector<Employee> get_employees_from_file(string filename) {
 	vector<Employee> files;
 
 	ifstream input_file(filename);
@@ -90,8 +90,7 @@ vector<Employee> get_employees_from_file(const string filename) {
 			field_count++;
 		}
 
-		if (enter_year <= 0 || enter_year >= 2024 || salary <= 0) { 
-			//cerr << "Error opening file: " << filename << endl; 
+		if (enter_year <= 0 || enter_year > 2024 || salary <= 0) { 
 			files.clear();
 			input_file.close();
 			return files;
@@ -105,7 +104,7 @@ vector<Employee> get_employees_from_file(const string filename) {
 	return files;
 };
 
-bool is_filepath_valid(const string& filepath) {
+bool is_filepath_valid(string filepath) {
 
 	regex file_path_regex("^(?:[a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?\"<>|]+\\.csv$");
 
@@ -116,12 +115,12 @@ bool is_filepath_valid(const string& filepath) {
 
 	return true;
 }
-bool is_filename_valid(string& filename) {
+bool is_filename_valid(string filename) {
 	regex filename_regex("^[^\\/:*?\"<>|]+\\.csv$");
 
 	regex filename_reserved_names("^(?:CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9]|con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\\..*)?$");
 
-	regex filename_reserved_chars("[\\/:*?\"<>|]");
+	regex filename_reserved_chars("[\\/:*?\'<>|]");
 
 	if (!regex_match(filename, filename_regex)) {
 		cerr << "Error: Invalid file name." << endl;
@@ -145,10 +144,10 @@ string get_valid_filepath() {
 	bool is_path_valid = false;
 	bool is_name_valid = false;
 
-	string filename { "" };
-	string filepath { "" };
+	string filename{""};
+	string filepath{""};
 
-	while (!is_path_valid && !is_name_valid) {
+	while (!is_path_valid || !is_name_valid){
 		filename = InputString("Enter filename (only csv acceptable): ");
 
 		filepath = InputString("Enter full path to path: ");
@@ -162,7 +161,7 @@ string get_valid_filepath() {
 	return filepath + filename;
 }
 
-string get_overwrite_confirmation(string& full_path) {
+string get_overwrite_confirmation(string full_path) {
 	while (file_exists(full_path)) {
 		if (confirm_overwrite(full_path)) {
 			return full_path;
@@ -200,7 +199,7 @@ void export_to_file(vector<Employee> employees_to_export) {
 		}
 	}
 
-	for (Employee& export_employee : employees_to_export) {
+	for (Employee export_employee : employees_to_export) {
 		file << export_employee.get_last_name() << ";" << export_employee.get_first_name() << ";" << export_employee.get_middle_name() << ";"
 			<< export_employee.get_job_title() << ";" << export_employee.get_enter_year() << ";" << export_employee.get_salary() << "\n";
 	}

@@ -3,6 +3,7 @@
 #include "Files.h"
 #include "Input.h"
 #include "Tasks.h"
+#include "Tests.h"
 
 #include <iostream>
 #include <vector>
@@ -12,6 +13,9 @@ using namespace std;
 
 int main()
 {
+	system("chcp 65001");
+	system("cls");
+
 	ShowGreeting();
 
 	int menu_item;

@@ -18,14 +18,17 @@ bool confirm_save_search_results() {
 
 void add_employee(Employee_manager& employees) {
 
-	Employee employee(
-		InputString("Enter employee's last name:"),
-		InputString("Enter employee's first name:"),
-		InputString("Enter employee's middle name:"),
-		InputString("Enter employee's job title:"),
-		InputInt("Enter employee's enter year:", 0, 2025),
-		InputDouble("Enter employee's salary:", 0, DBL_MAX)
-		);
+	string last_name= InputString("Enter employee's last name:");
+	string first_name= InputString("Enter employee's first name:");
+	string middle_name= InputString("Enter employee's middle name:");
+
+	string job_title= InputString("Enter employee's job title:");
+
+	int enter_year = InputInt("Enter employee's enter year:", 0, 2025);
+
+	double salary = InputDouble("Enter employee's salary:", 0, DBL_MAX);
+
+	Employee employee(last_name,first_name,middle_name,job_title,enter_year,salary);
 
 	employees.add_employee(employee);
 }
@@ -38,12 +41,11 @@ void load_data(Employee_manager& employees) {
 
 	if (employees_from_file.empty()) { cerr << "Error reading from file" << endl; }
 
+
 	else { employees.set_employees(employees_from_file); }
 }
 
 void save_data(Employee_manager& employees) {
-
-	string filepath = get_valid_filepath();
 
 	vector<Employee> employees_to_export = employees.get_employees();
 
